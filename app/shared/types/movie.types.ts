@@ -1,7 +1,7 @@
 import { TypeMaterialIconName } from './icon.types'
 
 export interface IGenre {
-	id: string
+	_id: string
 	name: string
 	slug: string
 	description: string
