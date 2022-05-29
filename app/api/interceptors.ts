@@ -15,9 +15,7 @@ export const axiosClassic = axios.create({
 
 const instance = axios.create({
 	baseURL: API_URL,
-	headers: {
-		'Content-Type': 'application/json',
-	},
+	headers: getContentType(),
 })
 
 instance.interceptors.request.use((config) => {
