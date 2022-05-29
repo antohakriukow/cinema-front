@@ -7,4 +7,4 @@ export const store = configureStore({
 	devTools: true,
 })
 
-export type TypeRootReducer = ReturnType<typeof store.getState>
+export type TypeRootState = ReturnType<typeof store.getState>
