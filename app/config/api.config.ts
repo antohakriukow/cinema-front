@@ -6,3 +6,4 @@ export const getMoviesUrl = (string: string) => `/movies${string}`
 export const getGenresUrl = (string: string) => `/genres${string}`
 export const getActorsUrl = (string: string) => `/actors${string}`
 export const getRatingsUrl = (string: string) => `/ratings${string}`
+export const getAdminUrl = (string: string) => `/manage${string}`
