@@ -25,7 +25,7 @@ export const useGenres = () => {
 				data.map(
 					(genre): ITableItem => ({
 						_id: genre._id,
-						editUrl: getAdminUrl(`genre/edit/${genre._id}`),
+						editUrl: getAdminUrl(`/genre/edit/${genre._id}`),
 						items: [genre.name, genre.slug],
 					})
 				),
@@ -41,7 +41,7 @@ export const useGenres = () => {
 
 	const { mutateAsync: deleteAsync } = useMutation(
 		'delete genre',
-		(genreId: string) => GenreService.deleteGenre(genreId),
+		(genreId: string) => GenreService.delete(genreId),
 		{
 			onError(error) {
 				toastError(error, 'Delete genre')
