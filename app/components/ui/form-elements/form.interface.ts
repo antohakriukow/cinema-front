@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, InputHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, CSSProperties, InputHTMLAttributes } from 'react'
 import { EditorProps } from 'react-draft-wysiwyg'
 import { FieldError } from 'react-hook-form'
 
@@ -10,7 +10,18 @@ export interface IFieldProps {
 }
 
 type TypeInputPropsField = InputHTMLAttributes<HTMLInputElement> & IFieldProps
+
 export interface IField extends TypeInputPropsField {}
+
+export interface IUploadField {
+	folder?: string
+	value?: string
+	onChange: (...event: any[]) => void
+	placeholder: string
+	error?: FieldError
+	style?: CSSProperties
+	isNoImage?: boolean
+}
 
 type TypeEditorPropsField = EditorProps & IFieldProps
 
