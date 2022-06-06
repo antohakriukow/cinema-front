@@ -13,6 +13,10 @@ import Meta from '@/utils/meta/Meta'
 
 import Content from './Content/Content'
 
+const DynamicPlayer = dynamic(() => import('@/ui/video-player/VideoPlayer'), {
+	ssr: false,
+})
+
 const SingleMovie: FC<{ movie: IMovie; similarMovies: IGalleryItem[] }> = ({
 	movie,
 	similarMovies,
@@ -24,7 +28,7 @@ const SingleMovie: FC<{ movie: IMovie; similarMovies: IGalleryItem[] }> = ({
 				Detail={() => <Content movie={movie} />}
 			/>
 
-			{/* Video player */}
+			<DynamicPlayer slug={movie.slug} videoSource={movie.videoUrl} />
 
 			<div className="mt-12">
 				<SubHeading title="Similar" />
