@@ -2,6 +2,7 @@ import axios from 'api/interceptors'
 
 import { IProfileInput } from '@/components/screens/profile/profile.interface'
 
+import { IMovie } from '@/shared/types/movie.types'
 import { IUser } from '@/shared/types/user.types'
 
 import { getUsersUrl } from '@/config/api.config'
@@ -39,5 +40,15 @@ export const UserService = {
 
 	async deleteUser(_id: string) {
 		return axios.delete<string>(getUsersUrl(`/${_id}`))
+	},
+
+	async getFavorites() {
+		return axios.get<IMovie[]>(getUsersUrl('/profile/favorites'))
+	},
+
+	async toggleFavorite(movieId: string) {
+		return axios.put(getUsersUrl('/profile/favorites'), {
+			movieId,
+		})
 	},
 }
