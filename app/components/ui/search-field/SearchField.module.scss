@@ -16,3 +16,10 @@
 		}
 	}
 }
+
+@media (max-width: 1200px) {
+	.search {
+		width: 160px;
+		@apply ml-8 mb-10;
+	}
+}

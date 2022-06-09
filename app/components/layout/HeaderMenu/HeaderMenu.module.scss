@@ -1,0 +1,49 @@
+.container {
+	@apply top-0 right-7 w-24 bg-transparent h-20 absolute z-30 flex flex-col;
+	> div {
+		> svg {
+			@apply m-0;
+		}
+	}
+}
+
+.container_opened {
+	@apply h-full bg-grey-900;
+}
+.menus {
+	@apply hidden;
+}
+
+.menus_visible {
+	@apply block;
+}
+
+@media (min-width: 800.1px) {
+	.container {
+		@apply hidden;
+	}
+}
+
+@media (max-width: 800px) {
+	.container_opened {
+		@apply w-2/5;
+	}
+}
+
+@media (max-width: 600px) {
+	.container_opened {
+		@apply w-1/2;
+	}
+}
+
+@media (max-width: 480px) {
+	.container_opened {
+		@apply w-3/5;
+	}
+}
+
+@media (max-width: 400px) {
+	.container_opened {
+		@apply w-3/4;
+	}
+}

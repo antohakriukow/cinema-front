@@ -1,0 +1,10 @@
+.btn {
+	@apply my-9 mx-11;
+	> svg {
+		@apply fill-white w-10 h-10;
+	}
+}
+
+.btn_close {
+	@apply mx-4 flex flex-row-reverse;
+}

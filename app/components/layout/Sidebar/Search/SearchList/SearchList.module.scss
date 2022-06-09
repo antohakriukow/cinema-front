@@ -32,3 +32,10 @@
 .notfound {
 	@apply text-white text-center my-4;
 }
+
+@media (max-width: 1200px) {
+	.list {
+		width: 160px;
+		@apply ml-8 mb-4;
+	}
+}

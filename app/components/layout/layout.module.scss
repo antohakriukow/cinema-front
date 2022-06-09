@@ -1,25 +1,65 @@
-$bar-width: 20%;
-
 .layout {
 	@apply relative;
 
-	> div:first-child,
-	> div:last-child {
-		@apply fixed top-0 bottom-0 overflow-y-scroll;
-		width: $bar-width;
+	> div:nth-child(1) {
+		@apply fixed top-0 bottom-0 overflow-y-scroll left-0 border-r border-r-grey-800;
+		width: 20%;
 		max-width: 350px;
-	}
-
-	> div:first-child {
-		@apply left-0 border-r border-r-grey-800;
-	}
-
-	> div:last-child {
-		@apply right-0 border-l border-l-grey-800;
 	}
 
 	.center {
 		@apply min-h-screen p-layout;
-		margin: 0 $bar-width;
+		margin: 0 20%;
+	}
+
+	> div:nth-child(3) {
+		@apply fixed top-0 bottom-0 overflow-y-scroll right-0 border-l border-l-grey-800;
+		width: 20%;
+		max-width: 350px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.layout {
+		> div:nth-child(1) {
+			width: 20%;
+			width: 240px;
+		}
+
+		.center {
+			@apply min-h-screen p-layout;
+			margin: 0 0 0 240px;
+		}
+
+		> div:nth-child(3) {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.layout {
+		> div:nth-child(1) {
+			width: 20%;
+			width: 240px;
+		}
+
+		.center {
+			@apply min-h-screen p-layout;
+			margin: 0 0 0 240px;
+		}
+
+		> div:nth-child(3) {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.layout {
+		.center {
+			@apply min-h-screen p-layout;
+			margin: 0;
+		}
 	}
 }
