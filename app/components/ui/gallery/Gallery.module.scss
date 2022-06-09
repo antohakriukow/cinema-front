@@ -18,13 +18,12 @@
 	}
 
 	&.vertical {
-		@apply mr-4 last:mr-0 w-1/5 h-72;
-		max-width: 200px;
+		@apply mr-4 last:mr-0 h-72 w-52;
 	}
 
 	&.horizontal {
-		@apply mb-8 h-44;
-		width: 31%;
+		@apply mr-6 last:mr-0 mb-8 h-44;
+		width: 30%;
 	}
 
 	&.withText {
@@ -47,6 +46,23 @@
 
 		.subTitle {
 			@apply text-grey-500 text-shadow;
+		}
+	}
+}
+
+@media (max-width: 1280px) {
+	.item {
+		&.vertical {
+			@apply w-44;
+		}
+	}
+}
+@media (max-width: 600px) {
+	.gallery {
+		.item {
+			&.vertical {
+				@apply h-64 w-40;
+			}
 		}
 	}
 }

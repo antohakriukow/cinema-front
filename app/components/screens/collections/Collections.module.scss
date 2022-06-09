@@ -66,3 +66,9 @@
 		@apply grid grid-cols-2 gap-10;
 	}
 }
+
+@media (max-width: 480px) {
+	.collections {
+		@apply grid-cols-1;
+	}
+}

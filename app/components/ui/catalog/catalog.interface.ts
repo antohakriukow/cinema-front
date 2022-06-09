@@ -5,3 +5,18 @@ export interface ICatalog {
 	description?: string
 	movies: IMovie[]
 }
+
+export interface ICatalogItem {
+	posterPath: string
+	name: string
+	link: string
+	content?: {
+		title: string
+		subTitle?: string
+	}
+}
+
+export interface ICatalogItemProps {
+	item: ICatalogItem
+	variant: 'horizontal' | 'vertical'
+}

@@ -1,6 +1,5 @@
 import { FC } from 'react'
 
-import GalleryItem from '@/ui/gallery/GalleryItem'
 import Description from '@/ui/heading/Description'
 import Heading from '@/ui/heading/Heading'
 
@@ -9,6 +8,7 @@ import Meta from '@/utils/meta/Meta'
 import { getMovieUrl } from '@/config/url.config'
 
 import styles from './Catalog.module.scss'
+import CatalogItem from './CatalogItem'
 import { ICatalog } from './catalog.interface'
 
 const Catalog: FC<ICatalog> = ({ title, description, movies }) => {
@@ -19,9 +19,9 @@ const Catalog: FC<ICatalog> = ({ title, description, movies }) => {
 				<Description text={description} className={styles.description} />
 			)}
 
-			<section className={styles.movies}>
+			<section className={styles.catalog}>
 				{movies.map((movie) => (
-					<GalleryItem
+					<CatalogItem
 						key={movie._id}
 						variant="horizontal"
 						item={{
@@ -35,10 +35,6 @@ const Catalog: FC<ICatalog> = ({ title, description, movies }) => {
 					/>
 				))}
 			</section>
-
-			{/* <div className="text-center">
-				<button className={styles.button}>Load more</button>
-			</div> */}
 		</Meta>
 	)
 }

@@ -1,5 +1,5 @@
 .container {
-	@apply top-0 right-7 w-24 bg-transparent h-20 absolute z-30 flex flex-col;
+	@apply top-0 right-7 w-full bg-transparent h-20 fixed z-30 flex flex-col bg-grey-900;
 	> div {
 		> svg {
 			@apply m-0;
@@ -8,10 +8,11 @@
 }
 
 .container_opened {
-	@apply h-full bg-grey-900;
+	@apply bg-grey-900 h-full;
 }
+
 .menus {
-	@apply hidden;
+	@apply mt-28 hidden;
 }
 
 .menus_visible {

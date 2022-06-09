@@ -58,7 +58,7 @@
 @media (max-width: 800px) {
 	.layout {
 		.center {
-			@apply min-h-screen p-layout;
+			@apply min-h-screen p-layout pt-24;
 			margin: 0;
 		}
 	}
