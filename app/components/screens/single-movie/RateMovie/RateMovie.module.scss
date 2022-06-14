@@ -17,3 +17,37 @@
 		@apply text-yellow-700 text-3xl font-semibold animate-scaleIn;
 	}
 }
+
+@media (max-width: 1300px) {
+	.wrapper {
+		@apply w-3/4;
+	}
+}
+
+@media (max-width: 600px) {
+	.wrapper {
+		@apply w-full p-5;
+	}
+}
+
+@media (max-width: 440px) {
+	.wrapper {
+		> h3 {
+			@apply text-xl;
+		}
+		> p {
+			@apply text-base;
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.wrapper {
+		> h3 {
+			@apply text-lg;
+		}
+		> p {
+			@apply text-sm;
+		}
+	}
+}

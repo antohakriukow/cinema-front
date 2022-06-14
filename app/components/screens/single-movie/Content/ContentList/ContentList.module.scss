@@ -12,3 +12,17 @@
 		}
 	}
 }
+
+@media (max-width: 480px) {
+	.list {
+		> .name {
+			@apply text-xs;
+		}
+
+		> .links {
+			> a {
+				@apply text-xs;
+			}
+		}
+	}
+}
