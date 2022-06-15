@@ -17,7 +17,7 @@ export const usePopularGenres = () => {
 					.map(
 						(genre): IMenuItem => ({
 							icon: genre.icon,
-							link: getGenresUrl(genre.slug),
+							link: getGenresUrl(`/${genre.slug}`),
 							title: genre.name,
 						})
 					)

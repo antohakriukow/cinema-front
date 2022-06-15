@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next'
 import { QueryClient, dehydrate, useQuery } from 'react-query'
 
-import Catalog from '@/components/ui/catalog/Catalog'
+import Catalog from '@/ui/catalog/Catalog'
 
 import { MovieService } from '@/services/movie.service'
 
@@ -30,6 +30,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		props: {
 			dehydratedState: dehydrate(queryClient),
 		},
+		revalidate: 60,
 	}
 }
 

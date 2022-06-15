@@ -2,13 +2,12 @@ import dynamic from 'next/dynamic'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
-import UploadField from '@/components/ui/form-elements/UploadField/UploadField'
-
 import SkeletonLoader from '@/ui/SkeletonLoader'
 import AdminNavigation from '@/ui/admin-navigation/AdminNavigation'
 import Button from '@/ui/form-elements/Button'
 import Field from '@/ui/form-elements/Field'
 import SlugField from '@/ui/form-elements/SlugField/SlugField'
+import UploadField from '@/ui/form-elements/UploadField/UploadField'
 import formStyles from '@/ui/form-elements/admin-form.module.scss'
 import Heading from '@/ui/heading/Heading'
 

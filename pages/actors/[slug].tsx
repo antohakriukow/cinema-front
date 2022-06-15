@@ -1,7 +1,7 @@
 // import { errorCatch } from 'api/api.helpers'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-import Catalog from '@/components/ui/catalog/Catalog'
+import Catalog from '@/ui/catalog/Catalog'
 
 import { IActor, IMovie } from '@/shared/types/movie.types'
 
@@ -50,6 +50,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 		return {
 			props: { movies, actor },
+			revalidate: 60,
 		}
 	} catch (e) {
 		return {

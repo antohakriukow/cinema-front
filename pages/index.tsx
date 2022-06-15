@@ -1,10 +1,10 @@
 import { errorCatch } from 'api/api.helpers'
 import type { GetStaticProps, NextPage } from 'next'
 
-import Home from '@/components/screens/home/Home'
-import { IHome } from '@/components/screens/home/home.interface'
-import { IGalleryItem } from '@/components/ui/gallery/gallery.interface'
-import { ISlide } from '@/components/ui/slider/slider.interface'
+import Home from '@/screens/home/Home'
+import { IHome } from '@/screens/home/home.interface'
+import { IGalleryItem } from '@/ui/gallery/gallery.interface'
+import { ISlide } from '@/ui/slider/slider.interface'
 
 import { ActorService } from '@/services/actor.service'
 import { MovieService } from '@/services/movie.service'
@@ -57,6 +57,7 @@ export const getStaticProps: GetStaticProps = async () => {
 				trendingMovies,
 				actors,
 			} as IHome,
+			revalidate: 60,
 		}
 	} catch (error) {
 		console.log(errorCatch(error))

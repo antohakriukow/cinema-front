@@ -1,8 +1,7 @@
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
-import SkeletonLoader from '@/components/ui/SkeletonLoader'
-
+import SkeletonLoader from '@/ui/SkeletonLoader'
 import AdminNavigation from '@/ui/admin-navigation/AdminNavigation'
 import Button from '@/ui/form-elements/Button'
 import Heading from '@/ui/heading/Heading'

@@ -1,6 +1,6 @@
 import axios from 'api/interceptors'
 
-import { IProfileInput } from '@/components/screens/profile/profile.interface'
+import { IProfileInput } from '@/screens/profile/profile.interface'
 
 import { IMovie } from '@/shared/types/movie.types'
 import { IUser } from '@/shared/types/user.types'

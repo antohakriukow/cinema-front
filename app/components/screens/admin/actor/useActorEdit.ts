@@ -22,7 +22,9 @@ export const useActorEdit = (setValue: UseFormSetValue<IActorEditInput>) => {
 		() => ActorService.getById(actorId),
 		{
 			onSuccess({ data }) {
-				getKeys(data).forEach((key) => setValue(key, data[key]))
+				getKeys(data).forEach((key) => {
+					setValue(key, data[key])
+				})
 			},
 			onError(error) {
 				toastError(error, 'Get actor')

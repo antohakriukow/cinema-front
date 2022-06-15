@@ -1,7 +1,7 @@
 import { axiosClassic } from 'api/interceptors'
 import axios from 'api/interceptors'
 
-import { IActorEditInput } from '@/components/screens/admin/actor/actor-edit.interface'
+import { IActorEditInput } from '@/screens/admin/actor/actor-edit.interface'
 
 import { IActor } from '@/shared/types/movie.types'
 
@@ -19,7 +19,7 @@ export const ActorService = {
 	},
 
 	async getById(_id: string) {
-		return axios.get<IActorEditInput[]>(getActorsUrl(`/${_id}`))
+		return axios.get<IActorEditInput>(getActorsUrl(`/${_id}`))
 	},
 
 	async create() {

@@ -6,7 +6,7 @@ import { useWidth } from '@/hooks/useWidth'
 
 export const useHeaderMenu = () => {
 	const { toggleMenuOpened, closeMenu } = useActions()
-	const isMenuOpened = useSelector((state) => state.ui.isMenuOpened)
+	const isMenuOpened = useSelector((state: any) => state.ui.isMenuOpened)
 
 	const { width } = useWidth()
 

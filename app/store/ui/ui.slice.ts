@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { IInitialState } from './ui.interface'
+import { IUiState } from './ui.interface'
 
-const initialState: IInitialState = {
+const initialState: IUiState = {
 	isMenuOpened: false,
 }
 
@@ -20,4 +20,4 @@ export const uiSlice = createSlice({
 })
 
 export const { toggleMenuOpened, closeMenu } = uiSlice.actions
-export const { reducer } = uiSlice
+export const uiReducer = uiSlice.reducer

@@ -1,7 +1,8 @@
-import Auth from "@/components/screens/auth/Auth"
-import { NextPage } from "next"
+import { NextPage } from 'next'
 
-const AuthPage:NextPage = () => {
+import Auth from '@/screens/auth/Auth'
+
+const AuthPage: NextPage = () => {
 	return <Auth />
 }
 

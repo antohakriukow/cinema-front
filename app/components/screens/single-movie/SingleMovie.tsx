@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 
-import { IGalleryItem } from '@/components/ui/gallery/gallery.interface'
-
 import Banner from '@/ui/banner/Banner'
 import Gallery from '@/ui/gallery/Gallery'
+import { IGalleryItem } from '@/ui/gallery/gallery.interface'
 import SubHeading from '@/ui/heading/SubHeading'
 
 import { IMovie } from '@/shared/types/movie.types'

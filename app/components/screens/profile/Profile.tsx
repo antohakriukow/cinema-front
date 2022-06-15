@@ -3,9 +3,9 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import SkeletonLoader from '@/components/ui/SkeletonLoader'
-import Button from '@/components/ui/form-elements/Button'
-import Heading from '@/components/ui/heading/Heading'
+import SkeletonLoader from '@/ui/SkeletonLoader'
+import Button from '@/ui/form-elements/Button'
+import Heading from '@/ui/heading/Heading'
 
 import { UserService } from '@/services/user.service'
 

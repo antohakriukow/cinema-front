@@ -1,3 +1,3 @@
-export interface IInitialState {
+export interface IUiState {
 	isMenuOpened: boolean
 }

@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next'
 
-import Collections from '@/components/screens/collections/Collections'
-import { ICollection } from '@/components/screens/collections/collections.interface'
+import Collections from '@/screens/collections/Collections'
+import { ICollection } from '@/screens/collections/collections.interface'
 
 import { GenreService } from '@/services/genre.service'
 
@@ -23,13 +23,12 @@ export const getStaticProps: GetStaticProps = async () => {
 
 		return {
 			props: { collections },
+			revalidate: 60,
 		}
 	} catch (e) {
-		// console.log(errorCatch(e))
 
 		return {
 			props: {},
-			// notFound: true,
 		}
 	}
 }

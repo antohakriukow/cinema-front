@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
-import SkeletonLoader from '@/components/ui/SkeletonLoader'
-
 import { useFavorites } from '@/screens/favorites/useFavorites'
+
+import SkeletonLoader from '@/ui/SkeletonLoader'
 
 import { useAuth } from '@/hooks/useAuth'
 

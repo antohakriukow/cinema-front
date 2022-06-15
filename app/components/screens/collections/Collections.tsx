@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import Description from '@/components/ui/heading/Description'
-import Heading from '@/components/ui/heading/Heading'
+import Description from '@/ui/heading/Description'
+import Heading from '@/ui/heading/Heading'
 
 import Meta from '@/utils/meta/Meta'
 

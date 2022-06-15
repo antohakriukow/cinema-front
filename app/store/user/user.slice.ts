@@ -48,4 +48,4 @@ export const userSlice = createSlice({
 	},
 })
 
-export const { reducer } = userSlice
+export const userReducer = userSlice.reducer

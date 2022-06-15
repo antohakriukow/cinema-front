@@ -3,13 +3,12 @@ import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import { ITableItem } from '@/components/ui/admin-table/AdminTable/admin-table.interface'
+import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface'
 
 import { useDebounce } from '@/hooks/useDebounce'
 
 import { GenreService } from '@/services/genre.service'
 
-import { convertMongoDate } from '@/utils/date/convertMongoDate'
 import { toastError } from '@/utils/toastr-error'
 
 import { getAdminUrl } from '@/config/api.config'

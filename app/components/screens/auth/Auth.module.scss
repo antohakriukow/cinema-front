@@ -19,3 +19,39 @@
 		}
 	}
 }
+
+@media (max-width: 800px) {
+	.wrapper {
+		> form {
+			@apply w-3/5;
+		}
+	}
+}
+
+@media (max-width: 620px) {
+	.wrapper {
+		> form {
+			@apply w-3/4;
+		}
+	}
+}
+
+@media (max-width: 510px) {
+	.wrapper {
+		> form {
+			@apply w-full px-0;
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.wrapper {
+		> form {
+			.buttons {
+				> button {
+					@apply px-8;
+				}
+			}
+		}
+	}
+}

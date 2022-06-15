@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from 'next';
 
 
 
-import Catalog from '@/components/ui/catalog/Catalog';
+import Catalog from '@/ui/catalog/Catalog';
 
 
 
@@ -26,6 +26,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 		return {
 			props: { movies },
+			revalidate: 60,
 		}
 	} catch (e) {
 		// console.log(errorCatch(e))

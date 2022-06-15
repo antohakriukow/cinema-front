@@ -1,9 +1,8 @@
 import { FC } from 'react'
 
-import Gallery from '@/components/ui/gallery/Gallery'
-import SubHeading from '@/components/ui/heading/SubHeading'
-
+import Gallery from '@/ui/gallery/Gallery'
 import Heading from '@/ui/heading/Heading'
+import SubHeading from '@/ui/heading/SubHeading'
 import Slider from '@/ui/slider/Slider'
 
 import Meta from '@/utils/meta/Meta'

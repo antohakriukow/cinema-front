@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { FormState, UseFormRegister } from 'react-hook-form'
 
-import Field from '@/components/ui/form-elements/Field'
+import Field from '@/ui/form-elements/Field'
 
 import { validEmail } from '@/shared/regex'
 

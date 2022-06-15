@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import { FC } from 'react'
 
-import MaterialIcon from '@/components/ui/MaterialIcon'
+import MaterialIcon from '@/ui/MaterialIcon'
 
 import { useHeaderMenu } from '../useHeaderMenu'
 
@@ -23,5 +23,3 @@ const BurgerMenuBtn: FC = () => {
 }
 
 export default BurgerMenuBtn
-
-// MdOutlineClose

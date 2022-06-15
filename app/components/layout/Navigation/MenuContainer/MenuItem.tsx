@@ -3,19 +3,23 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 
-import MaterialIcon from '@/components/ui/MaterialIcon'
+import MaterialIcon from '@/ui/MaterialIcon'
+
+import { useActions } from '@/hooks/useActions'
 
 import styles from './Menu.module.scss'
 import { IMenuItem } from './menu.interface'
 
 const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 	const { asPath } = useRouter()
+	const { closeMenu } = useActions()
 
 	return (
 		<li
 			className={cn({
 				[styles.active]: asPath === item.link,
 			})}
+			onClick={() => closeMenu()}
 		>
 			<Link href={item.link}>
 				<a>
