@@ -25,6 +25,7 @@ const FavoriteItem: FC<{ movie: IMovie }> = ({ movie }) => {
 						layout="fill"
 						draggable={false}
 						priority
+						unoptimized
 					/>
 
 					<div className={styles.title}>{movie.title}</div>

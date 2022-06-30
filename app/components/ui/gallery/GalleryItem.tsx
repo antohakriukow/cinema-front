@@ -22,6 +22,7 @@ const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
 					layout="fill"
 					draggable={false}
 					priority
+					unoptimized
 				/>
 				{item.content && (
 					<div className={styles.content}>

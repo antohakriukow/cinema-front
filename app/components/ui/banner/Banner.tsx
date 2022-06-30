@@ -18,6 +18,7 @@ const Banner: FC<IBanner> = ({ imagePath, Detail }) => {
 				layout="fill"
 				className="image-like-bg object-top"
 				priority
+				unoptimized
 			/>
 			{Detail && <Detail />}
 		</div>

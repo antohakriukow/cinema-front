@@ -23,6 +23,7 @@ const SlideItem: FC<ISlideItem> = ({ slide, buttonTitle = 'Watch' }) => {
 					alt={slide.title}
 					draggable={false}
 					priority
+					unoptimized
 				/>
 			)}
 			<div className={styles.content}>

@@ -22,6 +22,7 @@ const SearchList: FC<{ movies: IMovie[] }> = ({ movies }) => {
 								objectPosition="top"
 								src={movie.poster}
 								alt={movie.title}
+								unoptimized
 							/>
 							<span>{movie.title}</span>
 						</a>
