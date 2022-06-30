@@ -22,7 +22,6 @@ const CatalogItem: FC<ICatalogItemProps> = ({ item, variant }) => {
 					layout="fill"
 					draggable={false}
 					priority
-					unoptimized
 				/>
 				{item.content && (
 					<div className={styles.content}>

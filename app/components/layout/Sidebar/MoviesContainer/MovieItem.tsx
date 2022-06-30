@@ -24,7 +24,6 @@ const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 						src={movie.poster}
 						draggable={false}
 						priority
-						unoptimized
 					/>
 				</a>
 			</Link>
