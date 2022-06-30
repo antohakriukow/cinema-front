@@ -7,8 +7,6 @@ import { useAuth } from '@/hooks/useAuth'
 
 import Meta from '@/utils/meta/Meta'
 
-import { getMovieUrl } from '@/config/url.config'
-
 import FavoriteItem from './FavoriteItem'
 import styles from './Favorites.module.scss'
 import { useFavorites } from './useFavorites'
@@ -29,10 +27,14 @@ const Favorites: FC = () => {
 						className={styles.skeletonLoader}
 						containerClassName={styles.containerLoader}
 					/>
-				) : (
+				) : favoritesMovies && favoritesMovies.length > 0 ? (
 					favoritesMovies?.map((movie) => (
 						<FavoriteItem key={movie._id} movie={movie} />
 					))
+				) : (
+					<p className="text-white text-opacity-80">
+						You have no favorite movies.
+					</p>
 				)}
 			</section>
 		</Meta>

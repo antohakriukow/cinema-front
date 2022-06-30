@@ -25,6 +25,7 @@ const SingleMovie: FC<{ movie: IMovie; similarMovies: IGalleryItem[] }> = ({
 	movie,
 	similarMovies,
 }) => {
+	const videoApiUrl = 'http://api.cinema.kriukov.space'
 	useUpdateCountOpened(movie.slug)
 	return (
 		<Meta title={movie.title} description={`Watch ${movie.title}`}>
@@ -33,7 +34,10 @@ const SingleMovie: FC<{ movie: IMovie; similarMovies: IGalleryItem[] }> = ({
 				Detail={() => <Content movie={movie} />}
 			/>
 
-			<DynamicPlayer slug={movie.slug} videoSource={movie.videoUrl} />
+			<DynamicPlayer
+				slug={movie.slug}
+				videoSource={`${videoApiUrl}${movie.videoUrl}`}
+			/>
 
 			<div className="mt-12">
 				<SubHeading title="Similar" />

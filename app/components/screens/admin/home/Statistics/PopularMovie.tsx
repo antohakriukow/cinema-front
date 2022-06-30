@@ -23,6 +23,7 @@ const PopularMovie: FC = () => {
 			select: (data): IMovie => data[0],
 		}
 	)
+	const videoApiUrl = 'http://api.cinema.kriukov.space'
 	return (
 		<div className={cn(styles.block, styles.popular)}>
 			<SubHeading title="The most popular movie" />
@@ -38,7 +39,7 @@ const PopularMovie: FC = () => {
 								<Image
 									width={285}
 									height={176}
-									src={movie.bigPoster}
+									src={`${videoApiUrl}${movie.bigPoster}`}
 									alt={movie.title}
 									className={styles.image}
 									unoptimized

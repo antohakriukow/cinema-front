@@ -14,7 +14,8 @@ const FavoriteMovies: FC = () => {
 	const { favoritesMovies, isLoading } = useFavorites()
 	const { user } = useAuth()
 
-	if (!user) return <NotAuthFavoriteMovies />
+	// if (!user) return <NotAuthFavoriteMovies />
+	if (!user) return null
 
 	return isLoading ? (
 		<div className="mt-11">

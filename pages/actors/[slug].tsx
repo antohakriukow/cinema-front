@@ -1,4 +1,3 @@
-// import { errorCatch } from 'api/api.helpers'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
 import Catalog from '@/ui/catalog/Catalog'

@@ -84,8 +84,4 @@ const VideoPlayer: FC<IVideoPlayer> = ({ videoSource, slug }) => {
 	)
 }
 
-// If you wanna add change quality buttons
-//kmoskwiak.github.io/videojs-resolution-switcher/
-//https://stackoverflow.com/questions/38626993/change-video-quality-with-sources-pointing-to-different-quality-versions
-
 export default VideoPlayer

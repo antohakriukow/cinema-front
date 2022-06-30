@@ -8,15 +8,14 @@ import { IMovie } from '@/shared/types/movie.types'
 
 import { getGenresListEach } from '@/utils/movie/getGenresList'
 
-import { getMoviesUrl } from '@/config/api.config'
-import { getGenreUrl } from '@/config/url.config'
+import { getGenreUrl, getMovieUrl } from '@/config/url.config'
 
 import styles from './MovieList.module.scss'
 
 const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 	return (
 		<div className={styles.item}>
-			<Link href={getMoviesUrl(movie.slug)}>
+			<Link href={getMovieUrl(movie.slug)}>
 				<a>
 					<Image
 						width={65}
