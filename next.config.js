@@ -10,13 +10,13 @@ const nextConfig = {
 	async rewrites() {
 		return [
 			{
-				source: '/api/:path*',
-				destination: `http://api.cinema.kriukov.space/api/:path*`,
+				source: '/:path*',
+				destination: `http://api.cinema.kriukov.space/:path*`,
 				// destination: `http://localhost:4200/api/:path*`,
 			},
 			{
 				source: '/uploads/:path*',
-				destination: `http://api.cinema.kriukov.space/api/uploads/:path*`,
+				destination: `http://api.cinema.kriukov.space/uploads/:path*`,
 				// destination: `http://localhost:4200/api/:path*`,
 			},
 		]
