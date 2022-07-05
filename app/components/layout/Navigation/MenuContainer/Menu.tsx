@@ -12,8 +12,8 @@ const DynamicAuthItems = dynamic(() => import('./auth/AuthItems'), {
 const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 	return (
 		<div className={styles.menu}>
-			<div className={styles.heading}>{title}</div>
-			<ul className={styles.ul}>
+			<div className={styles.menu__heading}>{title}</div>
+			<ul className={styles.menu__list}>
 				{items.map((item) => (
 					<MenuItem item={item} key={item.link} />
 				))}

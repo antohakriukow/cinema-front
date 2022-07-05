@@ -1,50 +1,58 @@
+@import '../../../assets/styles/colors.scss';
 .container {
-	@apply top-0 right-7 w-full bg-transparent h-20 fixed z-30 flex flex-col bg-grey-900 overflow-scroll;
-	> div {
-		> svg {
-			@apply m-0;
-		}
-	}
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	background-color: $basic-900;
+	overflow: scroll;
+	top: 0;
+	right: 28px;
+	height: 80px;
+	width: 100%;
+	background-color: transparent;
+	z-index: 30;
 }
 
 .container_opened {
-	@apply bg-grey-900 h-full;
+	height: 100%;
+	background-color: $basic-900;
 }
 
 .menus {
-	@apply mt-28 hidden;
+	margin-top: 96px;
+	display: none;
 }
 
 .menus_visible {
-	@apply block;
+	display: block;
 }
 
-@media (min-width: 800.1px) {
+@media (min-width: 800.01px) {
 	.container {
-		@apply hidden;
+		display: none;
 	}
 }
 
 @media (max-width: 800px) {
 	.container_opened {
-		@apply w-2/5;
+		width: 40%;
 	}
 }
 
 @media (max-width: 600px) {
 	.container_opened {
-		@apply w-1/2;
+		width: 50%;
 	}
 }
 
 @media (max-width: 480px) {
 	.container_opened {
-		@apply w-3/5;
+		width: 60%;
 	}
 }
 
 @media (max-width: 400px) {
 	.container_opened {
-		@apply w-3/4;
+		width: 75%;
 	}
 }

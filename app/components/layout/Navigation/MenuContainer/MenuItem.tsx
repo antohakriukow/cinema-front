@@ -16,15 +16,15 @@ const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 
 	return (
 		<li
-			className={cn({
-				[styles.active]: asPath === item.link,
+			className={cn(styles.menu__item, {
+				[styles.menu__item_active]: asPath === item.link,
 			})}
 			onClick={() => closeMenu()}
 		>
 			<Link href={item.link}>
-				<a>
+				<a className={styles.menu__link}>
 					<MaterialIcon name={item.icon} />
-					<span>{item.title}</span>
+					<span className={styles.menu__title}>{item.title}</span>
 				</a>
 			</Link>
 		</li>

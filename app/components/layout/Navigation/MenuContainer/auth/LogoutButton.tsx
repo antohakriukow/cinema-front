@@ -4,6 +4,8 @@ import MaterialIcon from '@/ui/MaterialIcon'
 
 import { useActions } from '@/hooks/useActions'
 
+import styles from '../Menu.module.scss'
+
 const LogoutButton: FC = () => {
 	const { logout } = useActions()
 
@@ -13,10 +15,10 @@ const LogoutButton: FC = () => {
 	}
 
 	return (
-		<li>
-			<a onClick={logoutHandler}>
+		<li className={styles.menu__item}>
+			<a className={styles.menu__link} onClick={logoutHandler}>
 				<MaterialIcon name="MdLogout" />
-				<span>Logout</span>
+				<span className={styles.menu__title}>Logout</span>
 			</a>
 		</li>
 	)

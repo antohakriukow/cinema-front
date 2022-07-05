@@ -1,10 +1,16 @@
 .btn {
-	@apply fixed right-11 my-6;
+	position: fixed;
+	right: 44px;
+	margin: 24px 0;
+
 	> svg {
-		@apply fill-white w-10 h-10;
+		color: #fff;
+		width: 40px;
+		height: 40px;
 	}
 }
 
 .btn_close {
-	@apply flex flex-row-reverse;
+	display: flex;
+	flex-direction: row-reverse;
 }

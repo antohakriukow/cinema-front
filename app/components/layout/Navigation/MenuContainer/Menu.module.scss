@@ -1,39 +1,56 @@
+@import '../../../../assets/styles/mixins.scss';
+@import '../../../../assets/styles/colors.scss';
+
 .menu {
-	@apply mb-14 animate-fade;
+	margin-bottom: 56px;
+	@include animate-fade;
+}
 
-	.heading {
-		@apply text-grey-500 uppercase text-sm font-semibold pl-layout;
+.menu__heading {
+	color: $basic-500;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 600;
+	padding-left: 44px;
+}
+
+.menu__item {
+	padding: 0 32px;
+	border-right-width: 4px;
+	border-color: transparent;
+	transition: all ease-in-out 200;
+}
+
+.menu__item_active {
+	border-color: $primary;
+
+	.menu__title {
+		color: #fff;
 	}
-	.ul {
-		> li {
-			@apply px-8 border-r-4 border-r-transparent transition-colors;
+	> a > svg {
+		fill: $primary;
+	}
+}
 
-			> a {
-				@apply flex items-center text-grey-600 px-3 mt-6 cursor-pointer;
+.menu__link {
+	display: flex;
+	align-items: center;
+	color: $basic-600;
+	padding: 0 12px;
+	margin-top: 24px;
+	cursor: pointer;
 
-				> span {
-					@apply ml-3 text-lg hover:text-white;
-				}
+	> svg {
+		font-size: 22px;
+		transition: all ease-in-out 200;
+	}
+}
 
-				> svg {
-					@apply text-2lg;
-				}
-
-				> span,
-				> svg {
-					@apply transition-colors;
-				}
-			}
-			&.active {
-				@apply border-r-primary;
-
-				> a > span {
-					@apply text-white;
-				}
-				> a > svg {
-					@apply fill-primary;
-				}
-			}
-		}
+.menu__title {
+	margin-left: 12px;
+	transition: all ease-in-out 200;
+	&:hover {
+		color: #fff;
 	}
 }
