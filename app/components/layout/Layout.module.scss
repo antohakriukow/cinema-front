@@ -1,19 +1,33 @@
+@import '../../assets/styles/colors.scss';
 .layout {
-	@apply relative;
+	position: relative;
 
 	> div:nth-child(1) {
-		@apply fixed top-0 bottom-0 overflow-y-scroll left-0 border-r border-r-grey-800;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		overflow-y: scroll;
+		border-right-width: 1px;
+		border-color: $basic-800;
 		width: 20%;
 		max-width: 350px;
 	}
 
 	.center {
-		@apply min-h-screen p-layout;
+		min-height: 100vh;
+		padding: 44px;
 		margin: 0 20%;
 	}
 
 	> div:nth-child(3) {
-		@apply fixed top-0 bottom-0 overflow-y-scroll right-0 border-l border-l-grey-800;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		overflow-y: scroll;
+		border-left-width: 1px;
+		border-color: $basic-800;
 		width: 20%;
 		max-width: 350px;
 	}
@@ -27,7 +41,6 @@
 		}
 
 		.center {
-			@apply min-h-screen p-layout;
 			margin: 0 0 0 240px;
 		}
 
@@ -45,7 +58,6 @@
 		}
 
 		.center {
-			@apply min-h-screen p-layout;
 			margin: 0 0 0 240px;
 		}
 
@@ -58,7 +70,7 @@
 @media (max-width: 800px) {
 	.layout {
 		.center {
-			@apply min-h-screen p-layout pt-24;
+			padding-top: 96px;
 			margin: 0 0 0 0;
 		}
 	}

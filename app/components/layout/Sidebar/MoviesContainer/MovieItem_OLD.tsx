@@ -16,23 +16,17 @@ const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.item}>
-				<a href={getMovieUrl(movie.slug)} className={styles.link}>
-					<div className={styles.img}>
-						<Image
-							style={{
-								borderRadius: 8,
-								borderWidth: 1,
-							}}
-							width={65}
-							height={97}
-							alt={movie.title}
-							src={movie.poster}
-							draggable={false}
-							priority
-							unoptimized
-						/>
-					</div>
-				</a>
+				<Link href={getMovieUrl(movie.slug)}>
+					<Image
+						width={65}
+						height={97}
+						alt={movie.title}
+						src={movie.poster}
+						draggable={false}
+						priority
+						unoptimized
+					/>
+				</Link>
 				<div className={styles.info}>
 					<div className={styles.title}>{movie.title}</div>
 					<div className={styles.genres}>

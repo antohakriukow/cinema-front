@@ -1,53 +1,91 @@
+@import '../../../../assets/styles/mixins.scss';
+@import '../../../../assets/styles/colors.scss';
 .list {
-	@apply mt-11 animate-fade;
+	margin-top: 44px;
+	@include animate-fade;
+	// @apply mt-11 animate-fade;
+}
 
-	.heading {
-		@apply font-bold text-xl mb-5 text-white capitalize;
+.heading {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 28px;
+	margin-bottom: 20px;
+	color: #fff;
+	text-transform: capitalize;
+}
+
+.button {
+	display: block;
+	text-align: center;
+	padding: 10px;
+	@include btn-primary;
+}
+
+.wrapper {
+	border-right: 1px;
+	border-color: transparent;
+	border-radius: 4px;
+	padding: 4px 0 0 4px;
+}
+.item {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.info {
+	margin-left: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 67%;
+}
+
+.img {
+	border-radius: 8px;
+	width: 67px;
+	height: 99px;
+	padding: 1px;
+	&:hover {
+		background-color: $primary;
+	}
+}
+
+.title {
+	color: #fff;
+	font-size: 18px;
+	line-height: 28px;
+	font-weight: 500;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.genres {
+	color: $basic-600;
+	font-size: 14px;
+	line-height: 20px;
+
+	:hover {
+		color: $primary;
+	}
+}
+
+.rating {
+	display: flex;
+	align-items: center;
+	margin-bottom: 8px;
+
+	> svg {
+		fill: $yellow-700;
+		margin-right: 8px;
+		font-size: 18px;
+		line-height: 28px;
 	}
 
-	.button {
-		@apply p-2.5 btn-primary block text-center;
-	}
-
-	.item {
-		@apply mb-4 flex items-stretch;
-
-		> a {
-			img {
-				@apply rounded-image transition-colors;
-				border: 1px solid transparent !important;
-			}
-
-			&:hover {
-				img {
-					border-color: var(--primary-color) !important;
-				}
-			}
-		}
-
-		.info {
-			@apply ml-4 flex flex-col justify-between;
-			width: 67%;
-
-			.title {
-				@apply text-white text-lg font-medium truncate;
-			}
-
-			.genres {
-				@apply text-grey-600 text-sm;
-			}
-
-			.rating {
-				@apply flex items-center mb-2;
-
-				> svg {
-					@apply fill-yellow-700 mr-2 text-lg;
-				}
-
-				> span {
-					@apply text-white font-medium pt-0.5;
-				}
-			}
-		}
+	> span {
+		color: #fff;
+		padding-top: 2px;
+		font-weight: 500;
 	}
 }

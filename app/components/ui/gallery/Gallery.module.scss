@@ -1,4 +1,4 @@
-@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins.scss';
 
 .gallery {
 	@apply flex items-center overflow-x-auto flex-nowrap py-3;

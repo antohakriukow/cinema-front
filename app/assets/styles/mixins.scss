@@ -24,3 +24,27 @@
 		);
 	}
 }
+
+@mixin btn-primary {
+	background-color: #e30b13;
+	color: #fff;
+	border-radius: 0.65rem /* 10.4px */;
+	transition: background-color 0.3s ease-in-out;
+	&:hover {
+		background-color: #ff0009;
+	}
+}
+
+@mixin animate-fade {
+	@keyframes fade {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	.animate-fade {
+		animation: fade 0.5s ease-in-out;
+	}
+}
