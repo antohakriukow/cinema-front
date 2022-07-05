@@ -18,10 +18,10 @@ const Content: FC<{ movie: IMovie }> = ({ movie }) => {
 
 	return (
 		<div className={styles.content}>
-			<h1>{movie.title}</h1>
+			<h1 className={styles.title}>{movie.title}</h1>
 			<div className={styles.rating}>
 				<MaterialIcon name="MdStarRate" />
-				<span>{movie.rating.toFixed(1)}</span>
+				<span className={styles.rating__count}>{movie.rating.toFixed(1)}</span>
 			</div>
 			<div className={styles.details}>
 				<span>{movie.parameters.year} · </span>
@@ -46,7 +46,7 @@ const Content: FC<{ movie: IMovie }> = ({ movie }) => {
 			/>
 			<div className={styles.rating}>
 				<MaterialIcon name="MdStarRate" />
-				<span>{movie.rating.toFixed(1)}</span>
+				<span className={styles.rating__count}>{movie.rating.toFixed(1)}</span>
 			</div>
 
 			{user && <FavoriteButton movieId={movie._id} />}

@@ -41,8 +41,8 @@ const Auth: FC = () => {
 
 	return (
 		<Meta title="Auth">
-			<section className={styles.wrapper}>
-				<form onSubmit={handleSubmit(onSubmit)}>
+			<section className={styles.auth__wrapper}>
+				<form className={styles.auth__form} onSubmit={handleSubmit(onSubmit)}>
 					<Heading title="Auth" className="mb-6" />
 
 					<AuthFields
@@ -51,7 +51,7 @@ const Auth: FC = () => {
 						isPasswordRequired
 					/>
 
-					<div className={styles.buttons}>
+					<div className={styles.auth__buttons}>
 						<Button
 							type="submit"
 							onClick={() => setType('login')}

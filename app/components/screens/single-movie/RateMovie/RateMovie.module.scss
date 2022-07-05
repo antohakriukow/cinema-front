@@ -1,53 +1,73 @@
+@import '../../../../assets/styles/mixins.scss';
+@import '../../../../assets/styles/colors.scss';
+
 .wrapper {
-	@apply w-1/2 mx-auto my-10 air-block p-7 text-center;
-
-	> h3 {
-		@apply text-2xl font-semibold;
-	}
-
-	> p {
-		@apply mt-2 mb-3 text-lg opacity-60;
-	}
+	@include air-block;
+	width: 50%;
+	margin: 40px auto;
+	padding: 28px;
+	text-align: center;
 
 	> div {
-		@apply text-4xl opacity-90;
+		font-size: 36px;
+		line-height: 40px;
+		opacity: 0.9;
 	}
+}
 
-	> .thanks {
-		@apply text-yellow-700 text-3xl font-semibold animate-scaleIn;
-	}
+.title {
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: 600;
+}
+
+.subtitle {
+	font-size: 18px;
+	line-height: 28px;
+	margin: 8px 0 12px;
+	opacity: 0.6;
+}
+
+.thanks {
+	@include animate-scaleIn;
+	color: $yellow-700;
+	font-size: 1.875rem /* 30px */;
+	line-height: 2.25rem /* 36px */;
+	font-size: 1.875rem /* 30px */;
+	line-height: 2.25rem /* 36px */;
 }
 
 @media (max-width: 1300px) {
 	.wrapper {
-		@apply w-3/4;
+		width: 75%;
 	}
 }
 
 @media (max-width: 600px) {
 	.wrapper {
-		@apply w-full p-5;
+		width: 100%;
+		padding: 20px;
 	}
 }
 
 @media (max-width: 440px) {
-	.wrapper {
-		> h3 {
-			@apply text-xl;
-		}
-		> p {
-			@apply text-base;
-		}
+	.title {
+		font-size: 20px;
+		line-height: 28px;
+	}
+	.subtitle {
+		font-size: 16px;
+		line-height: 24px;
 	}
 }
 
 @media (max-width: 400px) {
-	.wrapper {
-		> h3 {
-			@apply text-lg;
-		}
-		> p {
-			@apply text-sm;
-		}
+	.title {
+		font-size: 18px;
+		line-height: 28px;
+	}
+	.subtitle {
+		font-size: 14px;
+		line-height: 20px;
 	}
 }

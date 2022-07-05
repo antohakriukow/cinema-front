@@ -19,8 +19,8 @@ const RateMovie: FC<IRateMovie> = ({ slug, _id }) => {
 
 	return (
 		<div className={styles.wrapper}>
-			<h3>How do you like the movie?</h3>
-			<p>Ratings improve recommendations</p>
+			<h3 className={styles.title}>How do you like the movie?</h3>
+			<p className={styles.subtitle}>Ratings improve recommendations</p>
 			{user ? (
 				<>
 					{isSended ? (

@@ -1,54 +1,90 @@
 @import '../../../assets/styles/mixins';
 
 .favorites {
-	@apply grid grid-cols-3 gap-8 mt-12;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 32px;
+	margin-top: 48px;
 }
 
 .containerLoader {
-	@apply w-full flex flex-wrap;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
 
-	.skeletonLoader {
-		@apply relative mb-8 h-44;
-	}
+.skeletonLoader {
+	position: relative;
+	height: 176px;
+	margin-bottom: 32px;
 }
 
 .itemWrapper {
-	@apply relative h-44 animate-fade transition-transform hover:-translate-y-3;
+	@include animate-fade;
+	position: relative;
+	height: 176px;
+	transition-property: transform;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
 
-	&:nth-child(3n) {
-		@apply mr-0;
+	&:hover {
+		@include -translate-y-3;
 	}
 
-	.item {
-		@apply relative z-1 w-full h-full flex items-end shadow-lg rounded-layout overflow-hidden;
-
-		@include fade-bg-gradient(0deg);
-		&::before {
-			@apply z-2;
-		}
-
-		img {
-			@apply image-like-bg;
-		}
-
-		.title {
-			@apply relative z-3 text-center m-4 w-full font-semibold text-white text-shadow;
-		}
+	&:nth-child(3n) {
+		margin-right: 0;
 	}
 
 	> button {
-		@apply z-3 block -left-3 -top-1 right-auto;
+		display: block;
+		left: -12px;
+		top: -4px;
+		right: auto;
+		z-index: 3;
 	}
+}
+
+.item {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	border-radius: 12px;
+	overflow: hidden;
+	@include shadow-lg;
+	@include fade-bg-gradient(0deg);
+	&::before {
+		z-index: 2;
+	}
+
+	img {
+		@include image-like-bg;
+	}
+}
+
+.title {
+	position: relative;
+	z-index: 3;
+	margin: 16px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-weight: 600;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 1280px) {
 	.favorites {
-		@apply grid grid-cols-2 gap-10;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 40px;
 	}
 }
 
 @media (max-width: 480px) {
 	.favorites {
-		@apply grid-cols-1;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 }

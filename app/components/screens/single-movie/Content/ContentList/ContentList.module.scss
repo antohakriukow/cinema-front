@@ -1,28 +1,32 @@
+@import '../../../../../assets/styles/mixins.scss';
+
 .list {
-	@apply flex items-center mb-1;
+	display: flex;
+	align-items: center;
+	margin-bottom: 4px;
+}
 
-	> .name {
-		@apply mr-2 text-white text-opacity-60;
-	}
+.name {
+	margin-right: 8px;
+	color: rgba(255, 255, 255, 0.6);
+}
 
-	> .links {
-		@apply text-white text-opacity-90;
-		> a {
-			@apply text-link;
-		}
+.links {
+	color: rgba(255, 255, 255, 0.9);
+	> a {
+		@include text-link;
 	}
 }
 
 @media (max-width: 480px) {
-	.list {
-		> .name {
-			@apply text-xs;
-		}
-
-		> .links {
-			> a {
-				@apply text-xs;
-			}
+	.name {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.links {
+		> a {
+			font-size: 12px;
+			line-height: 16px;
 		}
 	}
 }

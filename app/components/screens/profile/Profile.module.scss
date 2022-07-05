@@ -1,7 +1,14 @@
 .form {
-	@apply w-1/2 mt-12;
+	width: 50%;
+	margin-top: 48px;
 
 	> button {
-		@apply mt-5;
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 568px) {
+	.form {
+		width: 240px;
 	}
 }

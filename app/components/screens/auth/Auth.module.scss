@@ -1,57 +1,79 @@
-.wrapper {
-	@apply mt-32;
+@import '../../../assets/styles/mixins.scss';
+.auth__wrapper {
+	margin-top: 128px;
+}
 
-	> form {
-		@apply mx-auto w-1/2 air-block bg-opacity-80 p-7 text-center;
+.auth__form {
+	@include air-block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	padding: 28px;
+	text-align: center;
+}
 
-		.buttons {
-			@apply mt-12 shadow-lg;
+.auth__buttons {
+	margin-top: 48px;
+	@include shadow-lg;
 
-			> button {
-				&:first-child {
-					@apply rounded-r-none;
-				}
-				&:last-child {
-					@apply rounded-l-none opacity-80 hover:opacity-100 transition-opacity;
-					background-color: #8f050b;
-				}
+	> button {
+		&:first-child {
+			border-top-right-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+		&:last-child {
+			border-top-left-radius: 0px;
+			border-bottom-left-radius: 0px;
+			opacity: 0.8;
+			background-color: #8f050b;
+			transition-property: opacity;
+			transition-timing-function: ease-in-out;
+			transition-duration: 200ms;
+
+			&:hover {
+				opacity: 1;
 			}
 		}
+	}
+}
+
+@media (max-width: 960px) {
+	.auth__form {
+		width: 60%;
+	}
+}
+
+@media (max-width: 855px) {
+	.auth__form {
+		width: 70%;
 	}
 }
 
 @media (max-width: 800px) {
-	.wrapper {
-		> form {
-			@apply w-3/5;
-		}
+	.auth__form {
+		width: 60%;
 	}
 }
 
 @media (max-width: 620px) {
-	.wrapper {
-		> form {
-			@apply w-3/4;
-		}
+	.auth__form {
+		width: 75%;
 	}
 }
 
 @media (max-width: 510px) {
-	.wrapper {
-		> form {
-			@apply w-full px-0;
-		}
+	.auth__form {
+		width: 100%;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 }
 
 @media (max-width: 350px) {
-	.wrapper {
-		> form {
-			.buttons {
-				> button {
-					@apply px-8;
-				}
-			}
+	.auth__buttons {
+		> button {
+			padding-left: 32px;
+			padding-right: 32px;
 		}
 	}
 }

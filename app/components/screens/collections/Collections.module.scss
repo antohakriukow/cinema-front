@@ -1,46 +1,68 @@
 @import '../../../assets/styles/mixins';
 
 .collections {
-	@apply grid grid-cols-3 gap-10 mt-10;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 40px;
+	margin-top: 40px;
 
 	> a {
-		@apply animate-fade;
+		@include animate-fade;
 	}
 }
 
 .collection {
-	@apply relative flex items-end h-44 transition-transform;
+	position: relative;
+	height: 176px;
+	display: flex;
+	align-items: flex-end;
+	transition-property: transform;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
 
 	@include fade-bg-gradient(0deg);
 	&::before {
-		@apply rounded-layout;
+		border-radius: 12px;
 	}
 
 	img {
-		@apply rounded-layout image-like-bg;
+		@include image-like-bg;
+		border-radius: 12px;
 		box-shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
 			0 3px 3px 0 rgb(0 0 0 / 15%);
 	}
 
 	> span {
-		@apply z-1;
+		z-index: 1;
 	}
 
 	.behind {
-		@apply absolute overflow-hidden z-0 transition-transform;
+		position: absolute;
+		overflow: hidden;
+		z-index: 0;
+		transition-property: transform;
+		transition-timing-function: ease-in-out;
+		transition-duration: 200ms;
 
 		&.second {
-			@apply opacity-60 -top-1.5 left-2.5 right-2.5 bottom-4;
+			opacity: 0.6;
+			top: -6px;
+			left: 10px;
+			right: 10px;
+			bottom: 16px;
 		}
 
 		&.third {
-			@apply opacity-40 -top-3 left-5 right-5 bottom-8;
+			opacity: 0.4;
+			top: -12px;
+			left: 20px;
+			right: 20px;
+			bottom: 32px;
 		}
 	}
 
 	&:hover {
-		@apply -translate-y-1;
-
+		@include -translate-y-1;
 		.behind {
 			&.second {
 				transform: translateY(1px);
@@ -53,22 +75,30 @@
 	}
 
 	.content {
-		@apply relative z-2 text-center m-3 w-full;
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		margin: 12px;
+		width: 100%;
 
 		.title {
-			@apply font-semibold mb-1 text-white text-shadow;
+			margin-bottom: 4px;
+			color: #fff;
+			font-weight: 600;
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
 		}
 	}
 }
 
 @media (max-width: 1280px) {
 	.collections {
-		@apply grid grid-cols-2 gap-10;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 40px;
 	}
 }
 
 @media (max-width: 480px) {
 	.collections {
-		@apply grid-cols-1;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 }
