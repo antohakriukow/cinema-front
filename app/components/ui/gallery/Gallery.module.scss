@@ -1,7 +1,12 @@
 @import '../../../assets/styles/mixins.scss';
+@import '../../../assets/styles/colors.scss';
 
 .gallery {
-	@apply flex items-center overflow-x-auto flex-nowrap py-3;
+	display: flex;
+	align-items: center;
+	overflow-x: auto;
+	flex-wrap: nowrap;
+	padding: 12px 0;
 	-webkit-overflow-scrolling: touch;
 
 	&::-webkit-scrollbar {
@@ -10,7 +15,13 @@
 }
 
 .item {
-	@apply relative transition-transform flex items-end shadow-lg rounded-layout overflow-hidden;
+	@include shadow-lg;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	overflow: hidden;
+	border-radius: 12px;
+	transition: all ease-in-out 200;
 	flex: 0 0 auto;
 
 	&:hover {
@@ -18,34 +29,42 @@
 	}
 
 	&.vertical {
-		@apply mr-4 last:mr-0 h-72 w-52;
-	}
-
-	&.horizontal {
-		@apply mr-6 last:mr-0 mb-8 h-44;
-		width: 30%;
+		height: 288px;
+		width: 208px;
+		margin-right: 16px;
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 
 	&.withText {
 		@include fade-bg-gradient(0deg);
 		&::before {
-			@apply rounded-layout;
+			border-radius: 12px;
 		}
 	}
 
 	img {
-		@apply image-like-bg;
+		@include image-like-bg;
 	}
 
 	.content {
-		@apply relative z-2 text-center m-3 w-full;
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		margin: 12px;
+		width: 100%;
 
 		.title {
-			@apply font-semibold mb-1 text-white text-shadow;
+			margin-bottom: 4px;
+			font-weight: 600;
+			color: #fff;
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
 		}
 
 		.subTitle {
-			@apply text-grey-500 text-shadow;
+			color: $basic-500;
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
 		}
 	}
 }
@@ -53,16 +72,15 @@
 @media (max-width: 1280px) {
 	.item {
 		&.vertical {
-			@apply w-44;
+			width: 176px;
 		}
 	}
 }
 @media (max-width: 600px) {
-	.gallery {
-		.item {
-			&.vertical {
-				@apply h-64 w-40;
-			}
+	.item {
+		&.vertical {
+			width: 176px;
+			height: 256px;
 		}
 	}
 }

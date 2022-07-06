@@ -1,88 +1,158 @@
+@import '../../../assets/styles/colors.scss';
+@import '../../../assets/styles/mixins.scss';
+
 .button {
-	@apply btn-primary py-2 px-10;
+	@include btn-primary;
+	padding: 8px 40px;
 }
 
 .common {
-	@apply relative border-b border-grey-600 transition-colors focus-within:border-primary;
+	position: relative;
+	border-bottom-width: 1px;
+	border-color: $basic-600;
+	transition: all ease-in-out 200;
+	&:focus-within {
+		border: $primary;
+	}
 
 	> label {
-		@apply block;
-
+		display: block;
 		> span {
-			@apply text-xs uppercase text-grey-600 block;
+			display: block;
+			font-size: 12px;
+			line-height: 16px;
+			color: $basic-600;
+			text-transform: uppercase;
 		}
 	}
 }
 
 .field {
-	@apply text-left mb-8;
+	text-align: left;
+	margin-bottom: 32px;
 
 	input {
-		@apply outline-border-none focus:ring-0 bg-transparent text-grey-500 w-full m-0 px-0;
+		outline: none;
+		border: none;
+		background-color: transparent;
+		color: $basic-500;
+		width: 100%;
+		margin: 0;
+		padding-left: 0;
+		padding-right: 0;
+
+		&:focus {
+			@apply ring-0;
+		}
 	}
 }
 
 .uploadField {
-	@apply relative;
+	position: relative;
 	.uploadFlex {
-		@apply flex;
+		display: flex;
 
 		> .uploadImageContainer {
-			@apply shrink-0 relative w-24 h-24;
+			position: relative;
+			flex-shrink: 0;
+			width: 96px;
+			height: 96px;
 
 			img {
-				@apply image-like-bg rounded-md;
+				@include image-like-bg;
+				border-radius: 6px;
 			}
 
 			> span {
-				@apply animate-fade;
+				@include animate-fade;
 			}
 		}
 
 		> label {
-			@apply block mr-6;
+			display: block;
+			margin-right: 24px;
 
 			.error {
-				@apply relative -bottom-3;
+				position: relative;
+				bottom: -12px;
 			}
 
 			> span {
-				@apply text-xs uppercase text-grey-600 block mb-4;
+				display: block;
+				margin-bottom: 16px;
+				color: $basic-600;
+				font-size: 12px;
+				line-height: 16px;
+				text-transform: uppercase;
 			}
 
 			> input {
-				@apply block w-full text-sm text-grey-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary opacity-70 file:text-white transition-opacity;
+				display: block;
+				width: 100%;
+				font-size: 14px;
+				line-height: 20px;
+				color: $basic-600;
+				transition: all ease-in-out200;
+				opacity: 0.7;
+
+				@apply file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white;
 			}
 
 			&:hover > input {
-				@apply opacity-100;
+				opacity: 1;
 			}
 		}
 	}
 }
 
 .error {
-	@apply absolute -bottom-6 left-0 text-sm w-full text-primary;
+	position: absolute;
+	bottom: -24px;
+	left: 0;
+	font-size: 14px;
+	line-height: 20px;
+	width: 100%;
+	color: $primary;
 }
 
 .editorWrapper {
-	@apply border-0;
+	border: 0;
+}
 
-	.wrapper {
-		.toolbar {
-			@apply mt-4 outline-border-none rounded-t-lg mb-0 bg-grey-600 bg-opacity-40 p-3;
+.toolbar {
+	margin: 16px 0 0;
+	padding: 12px;
+	outline: none;
+	border: none;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	background: $basic-500;
 
-			> div {
-				@apply m-0;
+	> div {
+		margin: 0;
 
-				> div {
-					@apply outline-border-none shadow-none transition-colors border-grey-500 bg-grey-500 hover:bg-grey-300 mx-1.5;
-				}
+		> div {
+			@include shadow-none;
+			outline: none;
+			border: none;
+			margin: 0 6px;
+			transition: all ease-in-out 200;
+			background: $basic-500;
+
+			&:hover {
+				background-color: $basic-300;
 			}
 		}
-
-		.editor {
-			@apply h-96 border rounded-b-lg border-grey-700 px-4 text-grey-500 overflow-hidden;
-		}
 	}
+}
+
+.editor {
+	height: 384px;
+	padding: 16px;
+	border-width: 1px;
+	border-color: $basic-500;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	overflow: hidden;
+	color: $basic-500;
 }

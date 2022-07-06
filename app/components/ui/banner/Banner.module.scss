@@ -1,7 +1,14 @@
 @import '../../../assets/styles/mixins.scss';
 
 .banner {
-	@apply relative overflow-hidden w-full h-80 rounded-layout shadow-lg flex flex-col justify-end;
-
 	@include fade-bg-gradient();
+	@include shadow-lg;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	overflow: hidden;
+	width: 100%;
+	height: 320px;
+	border-radius: 12px;
 }

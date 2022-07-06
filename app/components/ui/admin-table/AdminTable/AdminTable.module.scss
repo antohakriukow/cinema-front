@@ -1,24 +1,53 @@
+@import '../../../../assets/styles/colors.scss';
+@import '../../../../assets/styles/mixins.scss';
+
 .item {
-	@apply flex items-center justify-between bg-grey-700 bg-opacity-20 mt-4 px-5 rounded-lg transition-colors hover:bg-opacity-50;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 16px;
+	padding: 0 20px;
+	border-radius: 8px;
+	background: $basic-800;
+	transition: all ease-in-out 200;
+
+	&:hover {
+		background: $basic-700;
+	}
 
 	> div {
-		@apply text-white text-opacity-80 py-3;
+		color: rgba(255, 255, 255, 0.8);
+		padding: 12px 0;
 		width: 24%;
 
 		&:last-child {
-			@apply text-right justify-end;
+			text-align: right;
+			justify-content: flex-end;
 		}
 	}
 }
 
 .itemHeader {
-	@apply bg-primary bg-opacity-20 shadow-lg mt-8 hover:bg-opacity-20;
+	@include shadow-lg;
+	margin-top: 32px;
+	background: rgba(227, 11, 19, 0.2);
+
+	&:hover {
+		background: rgba(227, 11, 19, 0.2);
+	}
 
 	> div {
-		@apply text-opacity-90 font-semibold py-2.5;
+		color: rgba(225, 225, 225, 0.9);
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-weight: 600;
 	}
 }
 
 .notFound {
-	@apply text-lg text-white text-opacity-60 text-center py-3;
+	padding: 12px 0;
+	color: rgba(225, 225, 225, 0.6);
+	text-align: center;
+	font-size: 18px;
+	line-height: 28px;
 }

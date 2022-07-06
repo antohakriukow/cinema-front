@@ -1,11 +1,25 @@
+@import '../../../../../assets/styles/colors.scss';
+
 .actions {
-	@apply flex items-center;
+	display: flex;
+	align-items: center;
 
 	> button {
-		@apply outline-border-none bg-transparent text-xl text-primary opacity-80 transition-opacity hover:opacity-100;
+		outline: none;
+		border: none;
+		background-color: transparent;
+		font-size: 20px;
+		line-height: 28px;
+		color: $primary;
+		opacity: 0.8;
+		transition: all ease-in-out 200;
+
+		&:hover {
+			opacity: 1;
+		}
 
 		&:first-child {
-			@apply mr-4;
+			margin-right: 16px;
 		}
 	}
 }

@@ -1,18 +1,37 @@
+@import '../../../assets/styles/colors.scss';
+
 .search {
-	@apply rounded-3xl border border-grey-700 px-3 py-2 flex items-center transition-colors;
+	display: flex;
+	align-items: center;
+	border-radius: 24px;
+	border-width: 1px;
+	border-color: $basic-700;
+	padding: 8px 12px;
+	transition: all ease-in-out 200;
 
 	> svg {
-		@apply fill-grey-600 mr-2 text-3xl transition-colors;
+		fill: $basic-600;
+		margin-right: 8px;
+		font-size: 30px;
+		transition: all ease-in-out 200;
 	}
 
 	> input {
-		@apply text-white placeholder:text-grey-600 block w-full bg-transparent outline-none;
+		display: block;
+		width: 100%;
+		background-color: transparent;
+		outline: none;
+		color: #fff;
+		::placeholder {
+			color: $basic-600;
+		}
 	}
 
 	&:focus-within {
-		@apply border-grey-600;
+		border-color: $basic-600;
+
 		> svg {
-			@apply fill-grey-500;
+			fill: $basic-500;
 		}
 	}
 }
@@ -20,6 +39,7 @@
 @media (max-width: 1200px) {
 	.search {
 		width: 160px;
-		@apply ml-8 mb-10;
+		margin-left: 32px;
+		margin-bottom: 40px;
 	}
 }

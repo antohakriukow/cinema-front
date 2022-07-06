@@ -1,11 +1,26 @@
+@import '@/assets/styles/mixins.scss';
+@import '@/assets/styles/colors.scss';
+
 .arrow {
-	@apply flex items-center justify-center rounded-full bg-white bg-opacity-30 text-white text-2xl p-2 animate-fade absolute z-20 bottom-8;
+	@include animate-fade;
+	position: absolute;
+	z-index: 20;
+	bottom: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px;
+	border-radius: 9999px;
+	background-color: rgba(255, 255, 255, 0.3);
+	color: #fff;
+	font-size: 24px;
+	line-height: 32px;
 
 	&.left {
-		@apply right-24;
+		right: 96px;
 	}
 
 	&.right {
-		@apply right-8;
+		right: 32px;
 	}
 }

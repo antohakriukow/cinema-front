@@ -1,13 +1,18 @@
 .form {
-	@apply mt-12;
-	.fields {
-		@apply flex items-center flex-wrap justify-between;
-		> div {
-			width: 48%;
-		}
-	}
+	margin-top: 48px;
 
 	> button {
-		@apply mt-10;
+		margin-top: 40px;
+	}
+}
+
+.fields {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	> div {
+		width: 48%;
 	}
 }

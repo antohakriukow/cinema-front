@@ -1,11 +1,22 @@
+@import '../../../assets/styles/mixins.scss';
+@import '../../../assets/styles/colors.scss';
+
 .selectContainer {
-	@apply relative mb-8 animate-fade;
+	position: relative;
+	margin-bottom: 32px;
+	@include animate-fade;
 
 	> label {
 		@apply block;
+		display: block;
 
 		> span {
-			@apply text-xs uppercase text-grey-600 block mb-1;
+			display: block;
+			margin-bottom: 4px;
+			font-size: 12px;
+			line-height: 16px;
+			text-transform: uppercase;
+			color: $basic-600;
 		}
 	}
 }

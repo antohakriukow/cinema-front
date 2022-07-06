@@ -10,11 +10,11 @@ const AdminNavItem: FC<{ item: INavItem }> = ({ item: { link, title } }) => {
 	const { asPath } = useRouter()
 
 	return (
-		<li>
+		<li className={styles.nav__item}>
 			<Link href={link}>
 				<a
-					className={cn({
-						[styles.active]: asPath === link,
+					className={cn(styles.nav__link, {
+						[styles.nav__link_active]: asPath === link,
 					})}
 				>
 					{title}

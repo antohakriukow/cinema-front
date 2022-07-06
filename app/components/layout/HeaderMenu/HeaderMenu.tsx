@@ -9,6 +9,7 @@ import { firstMenu, userMenu } from '../Navigation/MenuContainer/menu.data'
 import Search from '../Sidebar/Search/Search'
 
 import styles from './HeaderMenu.module.scss'
+import Logo from './Logo'
 import MenuBtn from './MenuBtn/MenuBtn'
 import { useHeaderMenu } from './useHeaderMenu'
 
@@ -21,6 +22,7 @@ const HeaderMenu: FC = () => {
 				[styles.container_opened]: isMenuOpened,
 			})}
 		>
+			<Logo />
 			<MenuBtn />
 			<div
 				className={cn(styles.menus, {

@@ -24,7 +24,11 @@ const UploadField: FC<IUploadField> = ({
 			<div className={styles.uploadFlex}>
 				<label>
 					<span>{placeholder}</span>
-					<input type="file" onChange={uploadFile} />
+					<input
+						className={styles.input_file}
+						type="file"
+						onChange={uploadFile}
+					/>
 					{error && <div className={styles.error}>{error.message}</div>}
 				</label>
 				{!isNoImage && (

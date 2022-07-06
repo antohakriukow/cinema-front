@@ -1,3 +1,21 @@
+@import '../../../../assets/styles/colors.scss';
+
 .badge {
-	@apply uppercase absolute top-6 right-3 cursor-pointer rounded-lg py-0.5 px-2 transition-colors border-grey-500 bg-grey-500 hover:bg-grey-300 text-xs text-grey-800;
+	cursor: pointer;
+	position: absolute;
+	top: 24px;
+	right: 12px;
+	padding: 2px 8px;
+	border-radius: 8px;
+	border-color: $basic-500;
+	background: $basic-500;
+	color: $basic-800;
+	font-size: 12px;
+	line-height: 16px;
+	text-transform: uppercase;
+	transition: all ease-in-out 200;
+
+	&:hover {
+		background: $basic-300;
+	}
 }

@@ -1,7 +1,11 @@
 @import '../../../assets/styles/mixins';
+@import '../../../assets/styles/colors';
 
 .catalog {
-	@apply grid grid-cols-3 gap-10 mt-10;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 40px;
+	margin-top: 40px;
 	-webkit-overflow-scrolling: touch;
 
 	&::-webkit-scrollbar {
@@ -10,61 +14,72 @@
 }
 
 .item {
-	@apply relative transition-transform flex items-end shadow-lg rounded-layout overflow-hidden;
+	@include shadow-lg;
+	position: relative;
+	overflow: hidden;
+	border-radius: 12px;
+	display: flex;
+	align-items: flex-end;
 	flex: 0 0 auto;
+	transition: all ease-in-out 200;
 
 	&:hover {
 		transform: translateY(-5px);
 	}
 
-	&.vertical {
-		@apply mr-4 last:mr-0 h-72 w-52;
-	}
-
 	&.horizontal {
-		@apply h-44;
+		height: 176px;
 	}
 
 	&.withText {
 		@include fade-bg-gradient(0deg);
 		&::before {
-			@apply rounded-layout;
+			border-radius: 12px;
 		}
 	}
 
 	img {
-		@apply image-like-bg;
+		@include image-like-bg;
 	}
 
 	.content {
-		@apply relative z-2 text-center m-3 w-full;
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		margin: 12px;
+		width: 200%;
 
 		.title {
-			@apply font-semibold mb-1 text-white text-shadow;
+			color: #fff;
+			font-weight: 600;
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+			margin-bottom: 4px;
 		}
 
 		.subTitle {
-			@apply text-grey-500 text-shadow;
+			color: $basic-500;
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
 		}
 	}
 }
 
 .heading {
-	@apply mb-3;
+	margin-bottom: 12px;
 }
 
 .button {
-	@apply btn-primary py-2 px-10;
+	@include btn-primary;
+	padding: 8px 40px;
 }
 
 @media (max-width: 1000px) {
 	.catalog {
-		@apply grid-cols-2;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
 
 @media (max-width: 600px) {
 	.catalog {
-		@apply grid-cols-1;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 }

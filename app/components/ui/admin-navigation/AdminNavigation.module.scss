@@ -1,27 +1,52 @@
+@import '../../../assets/styles/colors.scss';
+@import '../../../assets/styles/mixins.scss';
+
 .nav {
-	@apply air-block w-4/5 mx-auto mb-10;
+	@include air-block;
+	width: 80%;
+	margin: 0 auto 40px;
+}
 
-	> ul {
-		@apply flex justify-evenly items-center;
-		> li {
-			@apply inline-block;
+.nav__list {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
 
-			> a {
-				@apply block px-5 py-4 text-lg transition-colors relative text-white text-opacity-60 hover:text-opacity-100;
+.nav__item {
+	display: inline-block;
+}
 
-				&::before {
-					@apply absolute w-full h-0.5 bg-transparent transition-colors left-0 bottom-0 rounded-md;
-					content: '';
-				}
+.nav__link {
+	display: block;
+	position: relative;
+	padding: 16px 20px;
+	color: rgba(225, 225, 225, 0.6);
+	font-size: 18px;
+	line-height: 28px;
+	transition: all ease-in-out 200;
 
-				&.active {
-					@apply text-opacity-100;
+	&:hover {
+		color: rgba(225, 225, 225, 1);
+	}
 
-					&::before {
-						@apply bg-primary;
-					}
-				}
-			}
+	&::before {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		border-radius: 6px;
+		width: 100%;
+		height: 2px;
+		background-color: transparent;
+		transition: all ease-in-out 200;
+		content: '';
+	}
+
+	&.nav__link_active {
+		color: rgba(225, 225, 225, 1);
+
+		&::before {
+			background-color: $primary;
 		}
 	}
 }
